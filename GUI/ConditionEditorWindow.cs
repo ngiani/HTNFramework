@@ -46,7 +46,6 @@ public class ConditionEditorWindow : EditorWindow
 		if (names.Count > 0) {
 
 			selectedName = names.IndexOf (atom.name);
-
 			selectedName = EditorGUILayout.Popup (selectedName, names.ToArray (), GUILayout.Width (100));
 
 			if (selectedName == -1)
@@ -86,13 +85,9 @@ public class ConditionEditorWindow : EditorWindow
 			atom.sign = false;
 
 
-
-		GUILayout.Space (20.0f);
-		
+		GUILayout.Space (20.0f);	
 		
 		GUILayout.Label ("Variables", GUILayout.Width(100));
-
-
 
 		if (atom.terms.Count > 0) {
 
@@ -107,10 +102,7 @@ public class ConditionEditorWindow : EditorWindow
 				GUILayout.Label ("Name");
 					
 
-
 				List<string> domVarNamesList = new List<string> ();
-
-
 
 
 				foreach (Term v in agent.domainVariables)
@@ -118,8 +110,6 @@ public class ConditionEditorWindow : EditorWindow
 
 
 				foreach (Term v in agent.domainVariables){
-
-
 
 					if (v.key == variable.key) {
 						varIndex = agent.domainVariables.IndexOf (v);
@@ -129,27 +119,24 @@ public class ConditionEditorWindow : EditorWindow
 				}
 				
 
-				string[] DomvarNames = domVarNamesList.ToArray ();
-					
+				string[] DomvarNames = domVarNamesList.ToArray ();		
 
 				varIndex = EditorGUILayout.Popup (varIndex, DomvarNames);
-
-
+				
 				string newVar =  agent.domainVariables [varIndex].key;
-
-
 
 
 				GUILayout.Space (10.0f);
 
 				if ( agent.domainVariables [varIndex].key != variable.key) {
+				
 					atom.removeTerm(variable);
-
 					atom.addTerm(new Term(newVar));
 
 				}
 
 				if (GUILayout.Button ("Delete", GUILayout.Width (100))) {
+				
 					atom.removeTerm(variable);
 
 				}
@@ -165,14 +152,11 @@ public class ConditionEditorWindow : EditorWindow
 			if (agent.domainVariables.Count > 0) {
 				for (int i = 0; i < agent.domainVariables.Count; i++)
 					if (!atom.terms.Contains (agent.domainVariables [i])) {
-						
-
-						atom.addTerm (new Term (agent.domainVariables [i].key, null));
-
-
-						break;
-					} 
 					
+						atom.addTerm (new Term (agent.domainVariables [i].key, null));
+						break;
+						
+					} 		
 					
 			} else
 				EditorUtility.DisplayDialog ("", "No variables in planning variables list", "OK");
