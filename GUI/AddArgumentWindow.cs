@@ -26,9 +26,7 @@ public class AddArgumentWindow : EditorWindow
 
 	public static Type GetType( string TypeName )
 	{
-		
-		// Try Type.GetType() first. This will work with types defined
-		// by the Mono runtime, etc.
+
 		var type = Type.GetType( TypeName );
 		
 		// If it worked, then we're done here
@@ -123,9 +121,6 @@ public class AddArgumentWindow : EditorWindow
 
 			selectedField = EditorGUILayout.Popup (selectedField, fields.ToArray (),GUILayout.Width(150));
 
-
-
-	
 
 
 		//GUILayout.BeginVertical (GUILayout.Width (200));
