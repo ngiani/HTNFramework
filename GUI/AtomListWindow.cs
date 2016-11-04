@@ -107,11 +107,8 @@ public class AtomListWindow : EditorWindow
 
 					GUILayout.Label ("Name");
 
-
 					atomName = GUILayout.TextField(atomName,GUILayout.Width(75));
-
 					atomNames.list[i] = atomName;
-
 
 					if (GUILayout.Button("Delete",GUILayout.Width(75)))
 						atomNames.Remove(atomNames.list[i]);
