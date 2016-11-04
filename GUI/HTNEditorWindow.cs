@@ -141,23 +141,23 @@ public class HTNEditorWindow : EditorWindow
 			//VIEW: Draw methods from this task
 			foreach (Method method in task.methods) {
 
-				if (method != null){
+			   if (method != null){
 
-					items.Add(new HTNEditorItem(
-						new Rect(new Vector2 (position.x + 15, lastHeight + 20), new Vector2(100,20)),
-						method,itemType.METHOD));
-
-
-					//Lines are drawn for showing hierarchy relationship
-					Drawing.DrawLine (new Vector2(position.x, position.y + 10) , new Vector2 (position.x, lastHeight + 30), Color.black, 1.0f,false);
-					Drawing.DrawLine (new Vector2 (position.x, lastHeight + 30), new Vector2 (position.x + 10 , lastHeight + 30), Color.black, 1.0f,false);
+						items.Add(new HTNEditorItem(
+							new Rect(new Vector2 (position.x + 15, lastHeight + 20), new Vector2(100,20)),
+							method,itemType.METHOD));
 
 
-					lastHeight = DrawMethod (method, task, new Vector2 (position.x + 15, lastHeight + 20)).y;
+						//Lines are drawn for showing hierarchy relationship
+						Drawing.DrawLine (new Vector2(position.x, position.y + 10) , new Vector2 (position.x, lastHeight + 30), Color.black, 1.0f,false);
+						Drawing.DrawLine (new Vector2 (position.x, lastHeight + 30), new Vector2 (position.x + 10 , lastHeight + 30), Color.black, 1.0f,false);
 
 
-					index ++;
-				}
+						lastHeight = DrawMethod (method, task, new Vector2 (position.x + 15, lastHeight + 20)).y;
+
+
+						index ++;
+			    }
 			}
 		
 		}
@@ -351,9 +351,6 @@ public class HTNEditorWindow : EditorWindow
 
 
 					/*HTN EDITOR*/
-
-	
-
 			items = new List<HTNEditorItem>();
 
 			items.Add(new HTNEditorItem(
@@ -361,15 +358,7 @@ public class HTNEditorWindow : EditorWindow
 				goal,itemType.COMPOUND));
 
 			
-
-				
-			/*Vector2 lastHeight = calcLastHeight(goal,new Vector2(10,0));
-
-			scrollPositionHTN = GUI.BeginScrollView(new Rect(new Vector2(10, 0),new Vector2(300,700)),
-		                                        scrollPositionHTN,new Rect(new Vector2(10,0),
-		                           new Vector2(300,700 + lastHeight.y)),false,false);*/
-			
-				DrawCompoundTask(goal, null, new Vector2(10,0));
+			DrawCompoundTask(goal, null, new Vector2(10,0));
 
 			//GUI.EndScrollView ();
 			Event currentEvent = Event.current;
@@ -513,28 +502,6 @@ public class HTNEditorWindow : EditorWindow
 				selectedPT.cost = EditorGUI.FloatField(new Rect(new Vector2(editorPos.x +50, editorPos.y + 50),
 				                                                     new Vector2(75,20)),
 				                                            selectedPT.cost);
-
-
-				/*GUI.Label(new Rect(new Vector2(editorPos.x, editorPos.y + 75),itemSize),"Loop", labelStyle);
-
-
-
-				string[] loopOptions = new string[]{ "Yes", "No" };
-
-				int selectedOption = 0;
-
-				if (selectedPT.loop == true)
-					selectedOption = 0;
-				else if (selectedPT.loop == false)
-					selectedOption = 1;
-
-				selectedOption = EditorGUI.Popup(new Rect(new Vector2(editorPos.x + 100, editorPos.y + 75),itemSize),
-										selectedOption, loopOptions);
-
-				if (selectedOption == 0)
-					selectedPT.loop = true;
-				else if (selectedOption == 1)
-					selectedPT.loop = false;*/
 
 
 
