@@ -1177,12 +1177,6 @@ public class " + (string)selectedPT.groundData.name + @": PrimitiveTask, IGround
 						
 					}
 
-
-
-			
-
-			
-
 		}
 
 		
