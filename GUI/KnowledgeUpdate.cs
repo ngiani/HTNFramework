@@ -15,11 +15,8 @@ public class KnowledgeUpdateWindow : EditorWindow
 
 	public static void ShowWindow(){
 		
-
-		EditorWindow window = EditorWindow.GetWindow(typeof(KnowledgeUpdateWindow));
-		
+		EditorWindow window = EditorWindow.GetWindow(typeof(KnowledgeUpdateWindow));	
 		window.position = new Rect (200, 200,260, 50);
-
 
 	}
 
@@ -34,8 +31,6 @@ public class KnowledgeUpdateWindow : EditorWindow
 
 
 		var serializer = new XmlSerializer(typeof(float));
-
-
 
 		try {
 
@@ -59,9 +54,7 @@ public class KnowledgeUpdateWindow : EditorWindow
 
 		Directory.CreateDirectory(Path.GetDirectoryName(path));
 
-
 		var serializer = new XmlSerializer(typeof(float));
-		
 		
 		try {
 			using(var stream = new FileStream(path, FileMode.Open))
