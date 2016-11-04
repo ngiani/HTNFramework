@@ -109,7 +109,6 @@ public class PersonalityEditorWindow : EditorWindow
 
 
 							personality = GUILayout.TextField(personality,GUILayout.Width(75));
-
 							personalities.list[i] = personality;
 
 					
