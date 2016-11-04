@@ -24,9 +24,6 @@ public class Animate: PrimitiveTask, IGroundAction
 	//This starts agent's action execution
 	public void Start(ActionManager manager, State state){
 		
-
-
-		
 		//Monitor precondition validity in current state: if not valid, notify to manager
 		if (preconditions.Count > 0 && !RuleMatcher.MatchCondition (preconditions, state,logicalOperator))
 
@@ -98,11 +95,13 @@ public class Animate: PrimitiveTask, IGroundAction
 		
 	}
 	
+	//Runs when action is over
 	public void OnComplete(ActionManager manager, State state){
 
 		if (anim!=null)
 			anim.CrossFade ("Idle",0.0f);
 
+		//Add effect to state
 		foreach (Atom atom in effects){
 			
 			Atom fact = new Atom(atom.name,atom.sign);
