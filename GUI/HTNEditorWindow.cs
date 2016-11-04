@@ -120,7 +120,7 @@ public class HTNEditorWindow : EditorWindow
 
 				if (parent!=null){
 					ArrayList removeData = new ArrayList(2);
-					
+
 					removeData.Add(parent);
 					removeData.Add(task);
 					menu.AddItem(new GUIContent("Delete"), false, removeTask,removeData);
@@ -143,20 +143,20 @@ public class HTNEditorWindow : EditorWindow
 
 			   if (method != null){
 
-						items.Add(new HTNEditorItem(
-							new Rect(new Vector2 (position.x + 15, lastHeight + 20), new Vector2(100,20)),
-							method,itemType.METHOD));
+					items.Add(new HTNEditorItem(
+						new Rect(new Vector2 (position.x + 15, lastHeight + 20), new Vector2(100,20)),
+						method,itemType.METHOD));
 
 
-						//Lines are drawn for showing hierarchy relationship
-						Drawing.DrawLine (new Vector2(position.x, position.y + 10) , new Vector2 (position.x, lastHeight + 30), Color.black, 1.0f,false);
-						Drawing.DrawLine (new Vector2 (position.x, lastHeight + 30), new Vector2 (position.x + 10 , lastHeight + 30), Color.black, 1.0f,false);
+					//Lines are drawn for showing hierarchy relationship
+					Drawing.DrawLine (new Vector2(position.x, position.y + 10) , new Vector2 (position.x, lastHeight + 30), Color.black, 1.0f,false);
+					Drawing.DrawLine (new Vector2 (position.x, lastHeight + 30), new Vector2 (position.x + 10 , lastHeight + 30), Color.black, 1.0f,false);
 
 
-						lastHeight = DrawMethod (method, task, new Vector2 (position.x + 15, lastHeight + 20)).y;
+					lastHeight = DrawMethod (method, task, new Vector2 (position.x + 15, lastHeight + 20)).y;
 
 
-						index ++;
+					index ++;
 			    }
 			}
 		
@@ -422,9 +422,7 @@ public class HTNEditorWindow : EditorWindow
 
 
 							if (agent.goalCondition.Count> 0)
-								
-								
-									
+	
 								for(i = 0 ; i < agent.goalCondition.Count; i++){
 									
 									Atom cond = agent.goalCondition[i];
@@ -473,7 +471,7 @@ public class HTNEditorWindow : EditorWindow
 								ConditionEditorWindow.ShowWindow(agent,cond);
 								
 							}
-							//agent.goalCondition = 
+						
 						}
 	
 
@@ -609,8 +607,6 @@ public class HTNEditorWindow : EditorWindow
 				                           								  new Vector2(275,50 + selectedPT.preconditions.Count*10 )),false,false);
 
 					if (selectedPT.preconditions.Count> 0)
-
-						
 
 						for(i = 0 ; i < selectedPT.preconditions.Count; i++){
 								
